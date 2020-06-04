@@ -1,0 +1,2 @@
+# django-ecommerce
+school project
