@@ -1,0 +1,165 @@
+main {
+    display: flex;
+    justify-content: center;
+    padding: 5em 0;
+    flex-wrap: wrap;
+
+    h2, h3 {
+        text-transform: uppercase;
+    }
+
+    .line {
+        @include line;
+        flex-basis: 60%;
+    }
+
+    .single-product-images {
+        flex-basis: 35%;
+
+        .breadcrumbs {
+            flex-basis: 100%;
+            margin-bottom: 1em;
+
+            a {
+                text-transform: uppercase;
+                font-size: 0.75em;
+                color: $primaryColor;
+                text-decoration: none;
+
+                &:hover {
+                    color: $animationColor;
+                }
+            }
+
+            span {
+                font-size: 0.75em;
+            }
+        }
+
+        .images {
+            display: flex;
+            flex-basis: 100%;
+
+            .single-product-thumbnail {
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .single-product-image {
+                width: fit-content;
+                height: fit-content;
+                img {
+                    width: 128px;
+                }
+            }
+        }
+        
+        figure {
+            margin: 1em;
+        }
+
+
+    }
+
+    .single-product-text {
+        flex-basis: 25%;
+
+        > {
+            * {
+                margin: 0.5em 0;
+            }
+        }
+
+        .line {
+            @include line;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 2em;
+
+            small {
+                display: block;
+                text-transform: uppercase;
+            }
+
+            .label-radio {
+                display: inline-block;
+                border: 1px solid $primaryColor;
+                padding: 0.5em;
+                text-transform: uppercase;
+                min-width: 38px;
+            }
+
+            .form-radio {
+                opacity: 0;
+                width: 0;
+                position: fixed;
+
+                &:checked + .label-radio {
+                    color: $whiteColor;
+                    background-color: $primaryColor;
+                }
+            }
+
+            a {
+                text-align: center;
+                border: 1px solid $primaryColor;
+                padding: 0.5em;
+                text-decoration: none;
+                display: block;
+                max-width: 10vw;
+                
+                &:hover {
+                    color: $whiteColor;
+                    background-color: $primaryColor;
+                }
+            }
+
+            .form-radio + .label-radio {
+                margin: 0.5em 0;
+            }
+
+            .QUANTITY {
+                padding: 0.5em;
+                margin: 0.5em 0;
+                font-size: 1em;
+                text-align: center;
+                width: 38px;
+
+                &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+
+            li {
+                @include mp-clear;
+
+                a {
+                    text-decoration: none;
+                    display: block;
+                    margin: 0.25em;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+
+                    img {
+                        height: 24px;
+                        border-radius: 15%;
+                    }
+                }
+            }
+        }
+    }
+
+}

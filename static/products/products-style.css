@@ -1,0 +1,125 @@
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: header;
+}
+
+main {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main img {
+  max-width: 100%;
+  max-height: 350px;
+}
+
+main a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+main .category-product {
+  margin: 1em;
+  max-width: 15vw;
+}
+
+main .category-product figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+aside {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: aside;
+  justify-self: flex-start;
+  padding: 1em 0.85em;
+}
+
+aside > a {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+aside > a:hover {
+  color: #393E46;
+}
+
+aside a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+aside ul {
+  list-style-type: none;
+}
+
+aside ul li {
+  margin: 0.5em 0;
+  margin-left: 0.5em;
+}
+
+footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: footer;
+  margin-top: 10em;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .5fr .6fr 0.01fr 3fr .5fr;
+      grid-template-columns: .5fr .6fr 0.01fr 3fr .5fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "header header header header header" "banner banner banner banner banner" ". line line line ." ". aside pipe main ." "footer footer footer footer footer";
+}
+
+body .banner {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: banner;
+  margin-bottom: 5em;
+}
+
+body .banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .pipe {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: pipe;
+  border-left: 1px solid #393E46;
+  width: 100%;
+  margin: 1em 0;
+}
+
+body .line {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: line;
+  border-top: 1px solid #393E46;
+}
+/*# sourceMappingURL=products-style.css.map */

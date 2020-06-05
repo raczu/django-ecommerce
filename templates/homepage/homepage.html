@@ -1,0 +1,58 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/homepage.css' %}">
+<title>sk8shop</title>
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="banner-section">
+        <div class="banner-box">
+            <p>ZOO YORK SKATEBOARDS</p>
+            <h2>SPRING/SUMMER 2020</h2>
+            <p>ARE YOU READY?</p>
+            <a href="">NOW AVALIABLE</a>
+            <a href="">SHOP NOW</a>
+        </div>
+    </section>
+    <section class="random-products-section">
+        <h3>RANDOM PRODUCTS</h3>
+        {% for p in random_products %}
+        <section class="random-products">
+            <figure><img src="{{p.thumbnail.url}}"></figure>
+            <a
+                href="{% url 'products:details' cat=p.category.parent.title subcat=p.category.title slug=p.slug %}">{{ p.title }}</a>
+        </section>
+        {% endfor %}
+    </section>
+    <section class="news-section">
+        <section class="news">
+            <figure><img src="{% static 'homepage/images/newsphoto1.jpg' %}"></figure>
+            <span class="news-text">
+                <h3>RECENT SKATE EVENT</h3>
+                <p>OMEGA LUL POG</p>
+                <a href="">SHOW MORE</a>
+            </span>
+        </section>
+        <section class="news">
+            <span class="news-text">
+                <h3>EVEN KIDS ENJOY SKATEBOARDING</h3>
+                <p>BUY SOMETHING FOR YOUR KID</p>
+                <a href="">SHOW MORE</a>
+            </span>
+            <figure><img src="{% static 'homepage/images/newsphoto2.jpg' %}"></figure>
+        </section>
+    </section>
+</main>
+<aside>
+    <h3>FOLLOW US ON TIKTOK AND INSTAGRAM @WTFSZYMEK</h3>
+    <section class="aside-images">
+        <div class="line"></div>
+        <figure class="aside-image"><img src="{% static '/homepage/images/aside-image1.jpg' %}"></figure>
+        <figure class="aside-image"><img src="{% static '/homepage/images/aside-image2.jpg' %}"></figure>
+        <figure class="aside-image"><img src="{% static '/homepage/images/aside-image3.jpg' %}"></figure>
+    </section>
+</aside>
+{% endblock %}

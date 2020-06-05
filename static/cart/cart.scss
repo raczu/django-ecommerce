@@ -1,0 +1,115 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+main {
+    .bold {
+        font-weight: bold;
+    }
+  
+    .empty-message {
+    width: fit-content;
+    margin: 10em auto;
+    text-align: center;
+    height: auto;
+    
+    > {
+        * {
+            padding: 0.5em;
+        }
+    }
+    
+    a {
+        text-align: center;
+        border: 1px solid $primaryColor;
+        text-decoration: none;
+        width: 100%;
+        display: block;
+    
+        &:hover {
+        @include bt-color($whiteColor, $primaryColor);
+        }
+    }
+    }
+         
+      .cart {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5em auto;
+        width: 70%;
+        justify-content: flex-end;
+      
+        >  {
+            h2 {
+                flex-basis: 100%;
+                margin: 0.5em 0;
+            }
+        }
+
+        .line {
+            @include line;
+            flex-basis: 100%;
+        }
+      
+        p {
+          padding: 1em;
+          text-transform: uppercase;
+        }
+
+        a {
+            img {
+              width: 16px;
+            }
+        }
+
+        .cart-item {
+            flex-basis: 100%;
+            display: flex;
+
+            .item-remove {
+                padding: 1.1em;
+                flex-basis: 5%;
+                }
+                
+                .cart-item {
+                flex-basis: 100%;
+                display: flex;
+                }
+                
+                .item-product {
+                flex-basis: 40%;
+                }
+                
+                .item-price {
+                flex-basis: 15%;
+                }
+                
+                .item-quantity {
+                flex-basis: 10%;
+                }
+                
+                .item-variation {
+                flex-basis: 30%;
+                }
+        }
+      }
+      
+      .cart-checkout { 
+          h3 {
+            margin: 0.5em 0;
+            align-content: center;
+          }
+
+          .checkout {
+            text-align: center;
+            border: 1px solid $primaryColor;
+            padding: 0.5em;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+          
+            &:hover {
+              @include bt-color($whiteColor, $primaryColor)
+            }
+          }
+      }
+}

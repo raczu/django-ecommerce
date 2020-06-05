@@ -1,0 +1,134 @@
+main {
+    .banner-section {
+        background: url('../homepage/images/backgroundxd.jpg') no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .banner-box {
+        * {
+          color: $whiteColor;
+          text-transform: uppercase;
+        }
+      
+        text-align: center;
+      
+        h2 {
+          font-size: 3em;
+        }
+      
+        p {
+          font-size: 1.5em;
+        }
+      
+        a {
+          font-size: 1em;
+          display: inline-block;
+          min-width: 10vw;
+          padding: 1em;
+          margin: 1em;
+          border: 1px solid $whiteColor;
+          text-decoration: none;
+          font-weight: bold;
+      
+          &:nth-of-type(1) {
+            @include bt-color($primaryColor, $whiteColor);
+            &:hover {
+              background-color: transparent;
+              color: $whiteColor;
+            }
+
+          }
+          &:nth-of-type(2) {
+            &:hover {
+                @include bt-color($primaryColor, $whiteColor);
+            }
+          }
+        }
+      }
+      
+      .random-products-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5em;
+      
+        h3 {
+          flex-basis: 100%;
+          text-align: center;
+          margin: 1.5em;
+          font-size: 2em;
+        }
+      
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
+        .random-products {
+            img {
+              max-width: 100%;
+              max-height: 250px;
+            }
+          
+            margin: 2em;
+            max-width: 15vw;
+          }
+      }
+      
+      .news-section {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $whiteColor;
+      
+        h3 {
+          font-size: 1.5em;
+          margin: 0.5em 0;
+        }
+      
+        p {
+          margin: 0.5em 0;
+        }
+      
+        a {
+          text-align: center;
+          display: inline-block;
+          min-width: 10vw;
+          padding: 0.5em;
+          margin: 0.5em 0;
+          border: 1px solid $primaryColor;
+          text-decoration: none;
+          font-weight: bold;
+      
+          &:hover {
+            @include bt-color($whiteColor, $primaryColor);
+          }
+        }
+
+        .news {
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+          
+            figure {
+              flex-basis: 50%;
+            }
+          }
+          
+          .news-text {
+            flex-basis: 50%;
+            align-self: center;
+            padding: 2em;
+          }
+          
+          .news img {
+            max-width: 100%;
+            height: auto;
+          } 
+      }
+           
+}

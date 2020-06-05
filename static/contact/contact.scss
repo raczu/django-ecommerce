@@ -1,0 +1,126 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .banner {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .contact-form-section {
+        flex-basis: 50%;
+        padding: 2.5em 0;
+
+        span {
+            &:hover {
+                color: $animationColor;
+                cursor: pointer;
+            }
+        }
+
+        .contact-description, .contact-phone, .contact-mail {
+            margin: 1.5em 0;
+        }
+
+        form {
+            display: flex;
+            margin: 1.5em 0;
+            margin-bottom: 0.5em;
+            flex-wrap: wrap;
+            width: 75%;
+
+            label {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            input {
+                width: 100%;
+                padding: 0.5em;
+                margin: 0.5em 0;
+                font-size: 1em;
+                color: $primaryColor;
+            }
+
+            textarea {
+                width: 100%;
+                padding: 0.5em;
+                margin: 0.5em 0;
+                margin-bottom: 0;
+                font-size: 1.5em;
+                color: $primaryColor;
+                resize: none;
+            }
+
+            .name {
+                flex-basis: 50%;
+                padding: 0.5em 0;
+            }
+
+            .email {
+                flex-basis: 50%;
+                padding: 0.5em;
+                padding-right: 0;
+            }
+
+            .message {
+                flex-basis: 100%;
+                margin-bottom: 0.5em;
+            }
+
+            .captcha {
+                flex-basis: 100%;
+
+                label {
+                    flex-basis: 100%;
+                    margin: 0.5em 0;
+                }
+
+                .errorlist {
+                    width: 300px;
+                }
+            }
+
+            a {
+                margin: 0.5em 0;
+                padding: 0.5em 2em;
+                border: 1px solid $primaryColor;
+                text-decoration: none;
+
+                &:hover {
+                    color: #eeeeee;
+                    background-color: $primaryColor;
+                }
+            }
+
+            div {
+                ul {
+                    list-style-type: none;
+                    margin: 0.5em 0;
+                    padding: 0;
+                    font-size: small;
+
+                    li {
+                        @include message($errorColor, $errorBackground, $errorBorder)
+                        padding: 0.5em;
+                    }
+                }
+            }
+
+
+        }
+
+        .send-message {
+            width: 75%;
+            @include message($successColor, $successBackground, $successBorder)
+            padding: 0.5em;
+            font-size: small;
+        }
+    }
+}

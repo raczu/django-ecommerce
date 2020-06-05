@@ -1,0 +1,51 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static '/search/search.css' %}">
+{% if query %}
+<title>Search results: {{products.count}} for "{{query}}" - sk8shop</title>
+{% else %}
+<title> Search - sk8shop</title>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<main>
+    {% if query %}
+    {% if products.count == 1 %}
+    <h1>{{products.count}} RESULT FOR "{{query}}"</h1>
+    {% else %}
+    <h1>{{products.count}} RESULTS FOR "{{query}}"</h1>
+    {% endif %}
+    <form action="{% url 'products:search' %}" class="search" id="second-search">
+        <input type=" text" placeholder="SEARCH" name="search">
+        <a href="#" onclick='document.forms["second-search"].submit(); return false;'">SUBMIT</a>
+    </form>
+    <div class="line"></div>
+    <section class="search-products-section">
+        {% if products is not None %}
+        {% for p in products %}
+        <article class="search-single-product">
+            <figure><img src="{{ p.thumbnail.url }}" alt="single-product-image"></figure>
+            <a
+                href="{% url 'products:details' cat=p.category.parent.title subcat=p.category.title slug=p.slug %}">{{p.title}}</a>
+            {% if p.sale %}
+            <p><s>${{ p.price }}</s> ${{ p.sale }}</p>
+            {% else %}
+            <p>${{ p.price }}</p>
+            {% endif %}
+        </article>
+        {% endfor %}
+        {% endif %}
+    </section>
+    {% else %}
+    <h1>SEARCH OUR SITE</h1>
+    <p>Search field cannot be empty!</p>
+    <form action="{% url 'products:search' %}" class="search" id="second-search">
+        <input type=" text" placeholder="SEARCH" name="search">
+        <a href="#" onclick='document.forms["second-search"].submit(); return false;'">SUBMIT</a>
+    </form>
+        {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static '/products/products-style.css' %}">
+<title> sale - sk8shop</title>
+{% endblock %}
+
+{% block content %}
+<section class="banner">
+    <figure><img src="{% static '/products/images/background.jpg' %}"></figure>
+</section>
+<div class="line"></div>
+<aside>
+    <h1>PRODUCTS</h1>
+    <ul>
+        {% for c in category %}
+        <li><a href="{% url 'products:category' cat=c.title.lower %}">{{c.title}}</a>
+            <ul>
+                {% for sub in sub_category %}
+                {% if c.title in sub.parent.title %}
+                <li><a href="{% url 'products:subCategory' cat=c.title.lower subcat=sub.title %}">{{sub.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>
+<div class="pipe"></div>
+<main>
+    {% for p in products %}
+    {% if p.sale %}
+    <div class="category-product">
+        <figure><img src="{{ p.thumbnail.url }}" alt="image.png"></figure>
+        <a
+            href="{% url 'products:details' cat=p.category.parent.title subcat=p.category.title slug=p.slug %}">{{p.title}}</a>
+        {% if p.sale %}
+        <p><s>${{p.price}}</s> ${{p.sale}}</p>
+        {% else %}
+        <p>${{p.price}}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</main>
+{% endblock %}

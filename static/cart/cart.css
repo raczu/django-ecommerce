@@ -1,0 +1,126 @@
+main .bold {
+  font-weight: bold;
+}
+
+main .empty-message {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10em auto;
+  text-align: center;
+  height: auto;
+}
+
+main .empty-message > * {
+  padding: 0.5em;
+}
+
+main .empty-message a {
+  text-align: center;
+  border: 1px solid #393E46;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+main .empty-message a:hover {
+  background-color: #393E46;
+  color: #EEEEEE;
+}
+
+main .cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 5em auto;
+  width: 70%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .cart > h2 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 0.5em 0;
+}
+
+main .cart .line {
+  border-top: 1px solid #393E46;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+main .cart p {
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+main .cart a img {
+  width: 16px;
+}
+
+main .cart .cart-item {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .cart .cart-item .item-remove {
+  padding: 1.1em;
+  -ms-flex-preferred-size: 5%;
+      flex-basis: 5%;
+}
+
+main .cart .cart-item .cart-item {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .cart .cart-item .item-product {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+main .cart .cart-item .item-price {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+}
+
+main .cart .cart-item .item-quantity {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+main .cart .cart-item .item-variation {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+main .cart-checkout h3 {
+  margin: 0.5em 0;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main .cart-checkout .checkout {
+  text-align: center;
+  border: 1px solid #393E46;
+  padding: 0.5em;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+main .cart-checkout .checkout:hover {
+  background-color: #393E46;
+  color: #EEEEEE;
+}
+/*# sourceMappingURL=cart.css.map */

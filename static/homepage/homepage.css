@@ -1,0 +1,198 @@
+main .banner-section {
+  background: url("../homepage/images/backgroundxd.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .banner-box {
+  text-align: center;
+}
+
+main .banner-box * {
+  color: #EEEEEE;
+  text-transform: uppercase;
+}
+
+main .banner-box h2 {
+  font-size: 3em;
+}
+
+main .banner-box p {
+  font-size: 1.5em;
+}
+
+main .banner-box a {
+  font-size: 1em;
+  display: inline-block;
+  min-width: 10vw;
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid #EEEEEE;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main .banner-box a:nth-of-type(1) {
+  background-color: #EEEEEE;
+  color: #393E46;
+}
+
+main .banner-box a:nth-of-type(1):hover {
+  background-color: transparent;
+  color: #EEEEEE;
+}
+
+main .banner-box a:nth-of-type(2):hover {
+  background-color: #EEEEEE;
+  color: #393E46;
+}
+
+main .random-products-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5em;
+}
+
+main .random-products-section h3 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  margin: 1.5em;
+  font-size: 2em;
+}
+
+main .random-products-section a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+main .random-products-section .random-products {
+  margin: 2em;
+  max-width: 15vw;
+}
+
+main .random-products-section .random-products img {
+  max-width: 100%;
+  max-height: 250px;
+}
+
+main .news-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #EEEEEE;
+}
+
+main .news-section h3 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+main .news-section p {
+  margin: 0.5em 0;
+}
+
+main .news-section a {
+  text-align: center;
+  display: inline-block;
+  min-width: 10vw;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  border: 1px solid #393E46;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main .news-section a:hover {
+  background-color: #393E46;
+  color: #EEEEEE;
+}
+
+main .news-section .news {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .news-section .news figure {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+main .news-section .news-text {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 2em;
+}
+
+main .news-section .news img {
+  max-width: 100%;
+  height: auto;
+}
+
+aside {
+  text-align: center;
+  margin-bottom: 5em;
+}
+
+aside h3 {
+  font-size: 2em;
+  margin: 1em;
+}
+
+.aside-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 75%;
+  margin: auto;
+}
+
+.aside-images img {
+  max-width: 20vw;
+  margin: 1.5em;
+}
+
+.aside-images figure {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.aside-images figure:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+/*# sourceMappingURL=homepage.css.map */

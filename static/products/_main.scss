@@ -1,0 +1,27 @@
+main {
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    img {
+        max-width: 100%;
+        max-height: 350px;
+    }
+
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .category-product {
+        margin: 1em;
+        max-width: 15vw;
+
+        figure {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5em;
+        }
+    }
+}

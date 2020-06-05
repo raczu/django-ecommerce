@@ -1,0 +1,134 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+main .contact-form-section {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 2.5em 0;
+}
+
+main .contact-form-section span:hover {
+  color: #9e0b0b;
+  cursor: pointer;
+}
+
+main .contact-form-section .contact-description, main .contact-form-section .contact-phone, main .contact-form-section .contact-mail {
+  margin: 1.5em 0;
+}
+
+main .contact-form-section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1.5em 0;
+  margin-bottom: 0.5em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 75%;
+}
+
+main .contact-form-section form label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+main .contact-form-section form input {
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  color: #393E46;
+}
+
+main .contact-form-section form textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  color: #393E46;
+  resize: none;
+}
+
+main .contact-form-section form .name {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 0.5em 0;
+}
+
+main .contact-form-section form .email {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 0.5em;
+  padding-right: 0;
+}
+
+main .contact-form-section form .message {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-bottom: 0.5em;
+}
+
+main .contact-form-section form .captcha {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+main .contact-form-section form .captcha label {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 0.5em 0;
+}
+
+main .contact-form-section form .captcha .errorlist {
+  width: 300px;
+}
+
+main .contact-form-section form a {
+  margin: 0.5em 0;
+  padding: 0.5em 2em;
+  border: 1px solid #393E46;
+  text-decoration: none;
+}
+
+main .contact-form-section form a:hover {
+  color: #eeeeee;
+  background-color: #393E46;
+}
+
+main .contact-form-section form div ul {
+  list-style-type: none;
+  margin: 0.5em 0;
+  padding: 0;
+  font-size: small;
+}
+
+main .contact-form-section form div ul li {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #9e0b0b;
+  padding: 0.5em;
+}
+
+main .contact-form-section .send-message {
+  width: 75%;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #155724;
+  padding: 0.5em;
+  font-size: small;
+}
+/*# sourceMappingURL=contact1.css.map */

@@ -1,0 +1,55 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static '/cart/cart.css' %}">
+<title>Shopping cart - sk8shop</title>
+{% endblock %}
+
+{% block content %}
+<main>
+    {% if emptyMessage %}
+    <div class="empty-message">
+        <h2>YOUR CART</h2>
+        <p>{{ emptyMessage }}</p>
+        <a href="{% url 'products:list' %}">CONTINUE SHOPPING</a>
+    </div>
+    {% elif cart.cartitem_set.all.count == 0 %}
+    <div class="empty-message">
+        <h2>YOUR CART</h2>
+        <p>YOUR CART IS EMPTY</p>
+        <a href="{% url 'products:list' %}">CONTINUE SHOPPING</a>
+    </div>
+    {% else %}
+    <div class="cart">
+        <h2>SHOPPING CART</h2>
+        <div class="line"></div>
+        <div class="cart-item">
+            <a href="#" class="item-remove"></a>
+            <p class="item-product bold">NAME</p>
+            <p class="item-price bold">PRICE</p>
+            <p class="item-quantity bold">QUANTITY</p>
+            <p class="item-variation bold">VARIATION</p>
+        </div>
+        {% for item in cart.cartitem_set.all %}
+        <div class="cart-item">
+            <a href="{% url 'remove_from_cart' id=item.id %}" class="item-remove"><img
+                    src="{% static '/cart/images/cross.png' %}"></a>
+            <p class="item-product">{{ item.product.title }}</p>
+            {% if item.product.sale %}
+            <p class="item-price"><s>${{ item.product.price }}</s> ${{ item.product.sale }}</p>
+            {% else %}
+            <p class="item-price">${{ item.product.price }}</p>
+            {% endif %}
+            <p class="item-quantity">{{ item.quantity }}</p>
+            <p class="item-variation">SIZE: {{ item.variation }}</p>
+        </div>
+        {% endfor %}
+        <div class="cart-checkout">
+            <h3>SUBTOTAL ${{ cart.total }}</h3>
+            <a href="#" class="checkout">CHECKOUT</a>
+        </div>
+    </div>
+    {% endif %}
+</main>
+{% endblock %}

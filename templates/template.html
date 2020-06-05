@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'template.css' %}">
+    <link rel="shortcut icon" href="{% static 'logo.png' %}">
+    {% block extrahead %}
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <section class="social-nav">
+            <ul class="social-nav-ul">
+                <li><a href=""><img src="{% static '/template/images/twitter.png' %}" alt="social-nav-image"></a></li>
+                <li><a href=""><img src="{% static '/template/images/facebook.png' %}" alt="social-nav-image"></a></li>
+                <li><a href=""><img src="{% static '/template/images/youtube.png' %}" alt="social-nav-image"></a></li>
+                <li><a href=""><img src="{% static '/template/images/instagram.png' %}" alt="social-nav-image"></a></li>
+                <li><a href="{% url 'contact:form' %}"><img src="{% static '/template/images/email.png' %}"
+                            alt="social-nav-image"></a></li>
+                <li><a href="">22 669 1337</a></li>
+                <li><a href="{% url 'contact:form' %}">CONTACT US</a></li>
+            </ul>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}" class="logo"><img src="{% static 'logo.png' %}"></a></li>
+                <li><a href="{% url 'products:category' cat='clothing' %}">CLOTHING</a></li>
+                <li><a href="{% url 'products:category' cat='skate' %}">SKATE</a></li>
+                <li><a href="{% url 'products:category' cat='shoes' %}">SHOES</a></li>
+                <li><a href="{% url 'products:sale' %}">SALE</a></li>
+            </ul>
+            <section class="nav-right-side">
+                <form action="{% url 'products:search' %}" class="search" id="search">
+                    <input type=" text" placeholder="SEARCH" name="search">
+                    <a href="#" onclick='document.forms["search"].submit(); return false;'"><img
+                        src=" {% static 'template/images/search.png' %}" alt="search.png">
+                    </a>
+                </form>
+                <a href="{% url 'cart' %}"><img src="{% static 'template/images/cart.png' %}" alt="cart.png"></a>
+                {% if request.session.items_total %}
+                <p>({{request.session.items_total}})</p>
+                {% else %}
+                <p>(0)</p>
+                {% endif %}
+            </section>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <section class="social-footer">
+            <h1>SK8SHOP</h1>
+            <ul>
+                <li><a href="#" class="social-footer-icons"><img src="{% static '/template/images/twitter.png' %}"
+                            alt=social-footer-icons.png"></a></li>
+                <li><a href="#" class="social-footer-icons"><img src="{% static '/template/images/facebook.png' %}"
+                            alt="social-footer-icons.png"></a></li>
+                <li><a href="#" class="social-footer-icons"><img src="{% static '/template/images/youtube.png' %}"
+                            alt="social-footer-icons.png"></a></li>
+                <li> <a href="#" class="social-footer-icons"><img src="{% static '/template/images/instagram.png' %}"
+                            alt="social-footer-icons.png"></a>
+                </li>
+            </ul>
+        </section>
+        <section class="footer-nav">
+            <h3>SHOP</h3>
+            <ul>
+                <li><a href="#">CLOTHING</a></li>
+                <li><a href="#">SKATE</a></li>
+                <li><a href="#">SHOES</a></li>
+                <li><a href="#">SALE</a></li>
+            </ul>
+        </section>
+        <section class="footer-address">
+            <h3>LOCATION AND HOURS</h3>
+            <span class="address">
+                <p>ADDRESS:</p>
+                <p>UL. MASNA 21</p>
+                <p>44-194 KNUROW</p>
+                <a href="#">GOOGLE MAPS</a>
+            </span>
+            <p>PHONE 22 669 1337</p>
+            <span class="business-hours">
+                <p>BUSINESS HOURS:</p>
+                <p>Monday - Thursday: 11 am - 7 pm</p>
+                <p>Friday - Saturday: 11 am - 7 pm</p>
+                <p>Sunday: 12 pm - 6 pm</p>
+            </span>
+        </section>
+        <section class="footer-contact">
+            <h3>NEED HELP?</h3>
+            <ul>
+                <li><a href="{% url 'contact:form' %}">CONTACT US</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">FREE DELIVERY</a></li>
+                <li><a href="#">TERMS & CONDITIONS</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+            </ul>
+        </section>
+        <div class="line"></div>
+        <p class="copy">&copy; 2020 DAWID MACHOCZEK</p>
+    </footer>
+</body>
+
+</html>

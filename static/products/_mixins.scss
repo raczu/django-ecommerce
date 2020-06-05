@@ -1,0 +1,14 @@
+@mixin pipe {
+    border-left: 1px solid #393E46;
+    width: 100%;
+    margin: 1em 0;
+}
+
+@mixin line {
+    border-top: 1px solid #393E46;
+}
+
+@mixin mp-clear {
+    margin: 0;
+    padding: 0;
+}

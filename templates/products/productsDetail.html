@@ -1,0 +1,109 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static '/products/product-detail.css' %}">
+<script src="{% static '/products/script.js' %}"></script>
+<title>{{ p.title }} - sk8shop</title>
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="single-product-images">
+        <section class="breadcrumbs">
+            <a href="{% url 'home' %}">Home</a>
+            <span class="breadcrumbs-divider">/</span>
+            <a href="{% url 'products:list' %}">Products</a>
+            <span class="breadcrumbs-divider">/</span>
+            <a href="{% url 'products:category' cat=p.category.parent.title %}">{{p.category.parent.title}}</a>
+            <span class="breadcrumbs-divider">/</span>
+            <a href="{% url 'products:subCategory' cat=p.category.parent.title subcat=p.category.title %}">{{p.category.title}}</a>
+        </section>
+        <section class="images">
+            <div>
+                {% for i in product_image %}
+                <figure class="single-product-image"><img src="{{ i.image.url }}" alt="image.png" onclick="foo(this)">
+                </figure>
+                {% endfor %}
+            </div>
+            <figure class="single-product-thumbnail"><img src="{{ p.thumbnail.url }}" id="main-image" alt="image.png">
+            </figure>
+        </section>
+    </section>
+    <section class="single-product-text">
+        <h2>{{ p.title }}</h2>
+        <div class="line"></div>
+        {% if p.sale %}
+        <h3><s>${{ p.price }}</s> ${{ p.sale }}</h3>
+        {% else %}
+        <h3>${{ p.price }}</h3>
+        {% endif %}
+        {% if p.variation_set.all %}
+        <form method="GET" action="{% url 'add_to_cart' slug=p.slug %}" class="variation" id="variation">
+            {% if p.variation_set.sizes %}
+            <small class="bold">{{subcat_s}} SIZE</small>
+            {% for item in p.variation_set.sizes %}
+            <input type="radio" name="size" value="{{ item.title }}" class="form-radio" id="size-{{item.title}}">
+            <label for="size-{{item.title}}" class="label-radio">{{ item.title }}</label>
+            {% endfor %}
+            <small class="bold">QUANTITY</small>
+            <input type="number" value="1" name="qty" min="1" max="10" class="QUANTITY">
+            {% elif p.variation_set.shoe_sizes %}
+            <small class="bold">{{subcat_s}} SIZE</small>
+            {% for item in p.variation_set.shoe_sizes %}
+            <input type="radio" name="shoe_size" value="{{ item.title }}" class="form-radio"
+                id="shoe_size-{{item.title}}">
+            <label for="shoe_size-{{item.title}}" class="label-radio">{{ item.title }}</label>
+            {% endfor %}
+            <small class="bold">QUANTITY</small>
+            <input type="number" value="1" name="qty" min="1" max="10" class="QUANTITY">
+            </select>
+            {% elif p.variation_set.skate_sizes %}
+            <small class="bold">{{subcat_s}} SIZE</small>
+            {% for item in p.variation_set.skate_sizes %}
+            <input type="radio" name="skate_size" value="{{ item.title }}" class="form-radio"
+                id="skate_sizes-{{item.title}}">
+            <label for="skate_sizes-{{item.title}}" class="label-radio">{{ item.title }}</label>
+            {% endfor %}
+            <small class="bold">QUANTITY</small>
+            <input type="number" value="1" name="qty" min="1" max="10" class="QUANTITY">
+            {% else %}
+            <input type="radio" name="size" value="UNIVERSAL" class="form-radio" id="size-UNIVERSAL">
+            <label for="size-UNIVERSAL" class="label-radio">UNIVERSAL</label>
+            <small class="bold">QUANTITY</small>
+            <input type="number" value="1" name="qty" min="1" max="10" class="QUANTITY">
+            {% endif %}
+            <a href="#" onclick='document.forms["variation"].submit(); return false;'">ADD TO CART</a>
+        </form>
+        {% endif %}
+        <p class="bold">DESCRIPTION:</p>
+                <p>{{ p.description }}</p>
+                <div class="line"></div>
+                <ul>
+                    <li><a href="#"><img src="{% static '/template/images/twitter.png' %}"></a></li>
+                    <li><a href="#"><img src="{% static '/template/images/facebook.png' %}"></a></li>
+                    <li><a href="#" class="social-footer-icons"><img
+                                src="{% static '/template/images/youtube.png' %}"></a></li>
+                    <li><a href="#" class="social-footer-icons"><img
+                                src="{% static '/template/images/instagram.png' %}"></a>
+                    </li>
+                </ul>
+    </section>
+</main>
+<aside>
+    <div class="line"></div>
+    <h2>YOU MAY ALSO LIKE</h2>
+    {% for x in random_products %}
+    <div class="aside-products">
+        <figure><img src="{{ x.thumbnail.url }}" alt="image.png"></figure>
+        <a
+            href="{% url 'products:details' cat=x.category.parent.title subcat=x.category.title slug=x.slug %}">{{ x.title }}</a>
+        {% if x.sale %}
+        <p><s>${{x.price}}</s> ${{x.sale}}</p>
+        {% else %}
+        <p>${{x.price}}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</aside>
+{% endblock %}

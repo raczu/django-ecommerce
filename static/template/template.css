@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+.social-nav {
+    background-color: #EEEEEE;
+    color: #393E46
+}
+
+.social-nav-ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.social-nav-ul li {
+    margin: 0.5em;
+}
+
+.social-nav-ul li a {
+    text-decoration: none;
+}

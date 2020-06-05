@@ -1,0 +1,8 @@
+@mixin bt-color($color, $background) {
+    background-color: $background;
+    color: $color;
+}
+
+@mixin line {
+    border-top: 1px solid #393E46;
+}

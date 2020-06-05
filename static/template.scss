@@ -1,0 +1,25 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./header.scss";
+@import "./footer.scss";
+
+body {
+    @include mp-clear;
+    font-family: "Montserrat", sans-serif;
+    * {
+        @include mp-clear;
+        box-sizing: border-box;
+    }
+}
+
+a {
+    color: $primaryColor;
+    &:hover {
+        color: $animationColor;
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    color: $primaryColor;
+}
+

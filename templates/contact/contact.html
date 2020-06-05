@@ -1,0 +1,44 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static '/contact/contact.css' %}">
+<title>Contact us - sk8shop</title>
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="banner">
+        <figure><img src="{% static '/contact/images/banner.jpg' %}"></figure>
+    </section>
+    <section class="contact-form-section">
+        <h2>CONTACT US</h2>
+        <p class="contact-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the
+            industry's standarddummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a...</p>
+        <p class="contact-phone">Our phone number <span>22 669 1337</span></p>
+        <p class="contact-mail">Email us <span>sk8shop@gmail.com</span></p>
+        <p>BUSSINESS HOURS:<p>
+        <p>Monday - Thursday: 11 am - 7 pm</p>
+        <p>Friday - Saturday: 11 am - 7 pm</p>
+        <p>Sunday: 12 - 6 pm</p>
+        <form action="" method="post" id="contact-us" name="contact-us">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="{{ field.html_name }}">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            <a href="#" onclick='document.forms["contact-us"].submit(); return false;'">SEND</a>
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        <p class="send-message">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,31 @@
+aside {
+    text-align: center;
+    margin-bottom: 5em;
+  
+    h3 {
+      font-size: 2em;
+      margin: 1em;
+    }
+  }
+  
+  .aside-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+  
+    img {
+      max-width: 20vw;
+      margin: 1.5em;
+    }
+  
+    figure {
+      cursor: pointer;
+      transition: transform 0.5s;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }

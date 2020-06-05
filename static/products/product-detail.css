@@ -1,0 +1,240 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5em 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main h2, main h3 {
+  text-transform: uppercase;
+}
+
+main .line {
+  border-top: 1px solid #393E46;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+main .single-product-images {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
+main .single-product-images .breadcrumbs {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-bottom: 1em;
+}
+
+main .single-product-images .breadcrumbs a {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  color: #393E46;
+  text-decoration: none;
+}
+
+main .single-product-images .breadcrumbs a:hover {
+  color: #9e0b0b;
+}
+
+main .single-product-images .breadcrumbs span {
+  font-size: 0.75em;
+}
+
+main .single-product-images .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+main .single-product-images .images .single-product-thumbnail img {
+  max-width: 100%;
+  height: auto;
+}
+
+main .single-product-images .images .single-product-image {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main .single-product-images .images .single-product-image img {
+  width: 128px;
+}
+
+main .single-product-images figure {
+  margin: 1em;
+}
+
+main .single-product-text {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+main .single-product-text > * {
+  margin: 0.5em 0;
+}
+
+main .single-product-text .line {
+  border-top: 1px solid #393E46;
+  width: 100%;
+}
+
+main .single-product-text form {
+  margin-top: 2em;
+}
+
+main .single-product-text form small {
+  display: block;
+  text-transform: uppercase;
+}
+
+main .single-product-text form .label-radio {
+  display: inline-block;
+  border: 1px solid #393E46;
+  padding: 0.5em;
+  text-transform: uppercase;
+  min-width: 38px;
+}
+
+main .single-product-text form .form-radio {
+  opacity: 0;
+  width: 0;
+  position: fixed;
+}
+
+main .single-product-text form .form-radio:checked + .label-radio {
+  color: #EEEEEE;
+  background-color: #393E46;
+}
+
+main .single-product-text form a {
+  text-align: center;
+  border: 1px solid #393E46;
+  padding: 0.5em;
+  text-decoration: none;
+  display: block;
+  max-width: 10vw;
+}
+
+main .single-product-text form a:hover {
+  color: #EEEEEE;
+  background-color: #393E46;
+}
+
+main .single-product-text form .form-radio + .label-radio {
+  margin: 0.5em 0;
+}
+
+main .single-product-text form .QUANTITY {
+  padding: 0.5em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  text-align: center;
+  width: 38px;
+}
+
+main .single-product-text form .QUANTITY::-webkit-outer-spin-button, main .single-product-text form .QUANTITY::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main .single-product-text ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .single-product-text ul li {
+  margin: 0;
+  padding: 0;
+}
+
+main .single-product-text ul li a {
+  text-decoration: none;
+  display: block;
+  margin: 0.25em;
+}
+
+main .single-product-text ul li a:first-of-type {
+  margin-left: 0;
+}
+
+main .single-product-text ul li a img {
+  height: 24px;
+  border-radius: 15%;
+}
+
+aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+aside a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+aside > * {
+  margin: 0.5em;
+}
+
+aside h2 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+}
+
+aside img {
+  max-width: 100%;
+  max-height: 350px;
+}
+
+aside .line {
+  border-top: 1px solid #393E46;
+  width: 100%;
+}
+
+aside .aside-products {
+  margin: 2em;
+  max-width: 20vw;
+}
+
+aside .aside-products figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+footer {
+  margin-top: 10em;
+}
+
+.bold {
+  font-weight: bold;
+}
+/*# sourceMappingURL=product-detail.css.map */
